@@ -13,10 +13,12 @@ import pandas as pd
 import seaborn as sns
 
 import tensorflow as tf
-
-from tensorflow.python.keras import layers
+from keras.models import load_model
+import keras
 from tensorflow import keras
 from tensorflow.keras import layers
+
+from tensorflow.python.keras.models import load_model
 
 wsl_path = "/mnt/z/爱家工作/项目py数据/count.xlsx"
 # myfont = FontProperties(fname=r"/System/Library/Fonts/PingFang.ttc")
@@ -235,14 +237,14 @@ print(my_test_predictions)
 
 #%%
 # 保存模型
-tf.saved_model.save(model,export_dir='/mnt/d/pythonaijia/model/mnist/400')
+# tf.saved_model.save(model,export_dir='/mnt/d/pythonaijia/model/mnist/411')
 # model.save('/mnt/d/pythonaijia/model/mnist/128')
 # 模型保存，注意：仅仅是多了一个save_format的参数而已
 # 注意：这里的'path_to_saved_model'不再是模型名称，仅仅是一个文件夹，模型会保存在这个文件夹之下
-# model.save('/mnt/d/pythonaijia/model/mnist/128')
+model.save('/mnt/d/pythonaijia/model/mnist/412')
 
 # 加载模型，通过指定存放模型的文件夹来加载
-model = tf.saved_model.load("/mnt/d/pythonaijia/model/mnist/400")
+# model = tf.saved_model.load("/mnt/d/pythonaijia/model/mnist/411")
 
 # new_model = keras.models.load_model('path_to_saved_model')
 #%%
